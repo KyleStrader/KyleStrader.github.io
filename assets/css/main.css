@@ -2564,7 +2564,7 @@
 	#banner {
 		height: auto;
 		text-align: center;
-		position: relative;
+		position: absolute;
 		bottom: .5em;
 		left: 0;
 		width: 100%;
