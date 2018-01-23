@@ -33,6 +33,7 @@
 
 /* Hide the images by default */
 .mySlides {
+	position: absolute;
     display: none;
 	width: 100%;
 	height: auto;
@@ -113,10 +114,6 @@
 
 #logo:hover {
 	color: #f49542; 
-}
-
-.home-about-me {
-	position: 
 }
 
 /* Reset */
