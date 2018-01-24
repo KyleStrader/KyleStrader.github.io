@@ -48,15 +48,15 @@ function showSlides(n, animDirection, isReversed) {
   
   if (animDirection) {
     let rawDirection = isReversed ? animDirection.reverse : animDirection.forward;
-    let prevSlideIndex = (slideIndex + (isReversed ? -1 : 1)) % slides.length; 
+    let prevSlideIndex = (slideIndex + (isReversed ? 1 : -1)) % slides.length; 
     if (prevSlideIndex >= slides.length) {prevSlideIndex = 0} 
     if (prevSlideIndex < 0) {prevSlideIndex = slides.length - 1}
     slides[slideIndex].style.display = "block";
     slides[prevSlideIndex].style.display = "block";
     switch(rawDirection) {
       case AnimDirection.left.forward:
-        slides[slideIndex].className = 'mySlides animated fadeOutLeft'; 
-        slides[prevSlideIndex].className = 'mySlides animated fadeInRight';
+        slides[slideIndex].className = 'mySlides animated fadeInRight'; 
+        slides[prevSlideIndex].className = 'mySlides animated fadeOutLeft';
         break;
       case AnimDirection.right.forward:
         slides[slideIndex].className = 'mySlides animated fadeInLeft'; 
