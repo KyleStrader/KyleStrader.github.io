@@ -74,7 +74,7 @@ function showSlides(n, animDirection, isReversed) {
         break;
     }
   } else {
-    slides[slideIndex].className = 'mySlides animated fadeInDown';
+    slides[slideIndex].className = 'mySlides animated fadeIn';
     slides[slideIndex].style.display = "block";
   }
 
