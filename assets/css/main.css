@@ -753,10 +753,10 @@
 
 	#nav {
 		cursor: default;
-		background: -moz-linear-gradient(bottom, rgba(0,0,0,0), #111);
-		background: -webkit-linear-gradient(bottom, rgba(0,0,0,0), #111);
-		background: -ms-linear-gradient(bottom, rgba(0,0,0,0), #111);
-		background: linear-gradient(bottom, rgba(0,0,0,0), #111);
+		background: -moz-linear-gradient(bottom, rgba(0,0,0,0), rgba(0, 0, 0, 0.7), rgb(0, 0, 0));
+		background: -webkit-linear-gradient(bottom, rgba(0,0,0,0), rgba(0, 0, 0, 0.7), rgb(0, 0, 0));
+		background: -ms-linear-gradient(bottom, rgba(0,0,0,0), rgba(0, 0, 0, 0.7), rgb(0, 0, 0));
+		background: linear-gradient(bottom, rgba(0,0,0,0), rgba(0, 0, 0, 0.7), rgb(0, 0, 0));
 		padding: 0;
 		position: absolute;
 		z-index: 1;
