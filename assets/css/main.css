@@ -35,31 +35,29 @@
 		top: 30vh;
 		left: 20vh;
 		position: absolute;
-		height: auto;
-		width: 100%;
-		display: block;
+		float: left;
 	}
 	
-	.slideshow-container > .mySlides > .slide-description > span {
-		position: relative;
-		height: auto;
+	.description-title {
+		animation-delay: 1s;
 		padding: 20px;
-		width: 100%;
-		display: block;
+		display: inline-block;
 		color: #fff;
 		font-size: 50pt;
 		font-weight: bold
 	}
 	
-	.slideshow-container > .mySlides > .slide-description > p {
-		position: relative;
-		height: auto;
-		padding: 20px;
-		width: 100%;
-		display: block;
+	.description-phrase {
+		animation-delay: 2.1s;
+		padding: 10px 20px 10px;
+		display: inline-block;
 		color: #ccc;
 		font-size: 28pt;
 		font-weight: bold
+	}
+
+	.description-phrase > div {
+		padding: 0;
 	}
 
 /* Hide the images by default */

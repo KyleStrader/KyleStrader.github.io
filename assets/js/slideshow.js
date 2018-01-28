@@ -32,6 +32,27 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
+function setDisplay(element, isBlockDisplay) {
+  if (element.style.display === 'none' && isBlockDisplay) {
+    for(let i = 0; i < element.childNodes.length; ++i) {
+      let slideDescription = element.childNodes[i];
+      console.log(slideDescription.classList);
+      if($(slideDescription).classList && $(slideDescription).hasClass('slide-description')) {
+        for(let i = 0; i < slideDescription.childNodes.length; ++i) {
+          if (element.childNodes[i].className !== undefined
+            && ($(element.childNodes[i]).hasClass("description-title") 
+            || $(element.childNodes[i]).hasClass("description-phrase"))) {
+              element.childNodes[i].classList.remove('animated');
+              void element.childNodes[i].offsetWidth;
+              element.childNodes[i].classList.add('animated');
+          }
+        }
+      }
+    }
+  }
+  element.style.display = isBlockDisplay ? "block" : "none";
+}
+
 function showSlides(n, animDirection, isReversed) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -51,8 +72,8 @@ function showSlides(n, animDirection, isReversed) {
     let prevSlideIndex = (slideIndex + (isReversed ? 1 : -1)) % slides.length; 
     if (prevSlideIndex >= slides.length) {prevSlideIndex = 0} 
     if (prevSlideIndex < 0) {prevSlideIndex = slides.length - 1}
-    slides[slideIndex].style.display = "block";
-    slides[prevSlideIndex].style.display = "block";
+    setDisplay(slides[slideIndex], true);
+    setDisplay(slides[prevSlideIndex], true);
     switch(rawDirection) {
       case AnimDirection.left.forward:
         slides[slideIndex].className = 'mySlides animated fadeInRight'; 
@@ -75,7 +96,7 @@ function showSlides(n, animDirection, isReversed) {
     }
   } else {
     slides[slideIndex].className = 'mySlides animated fadeIn';
-    slides[slideIndex].style.display = "block";
+    setDisplay(slides[slideIndex], true);
   }
 
   dots[slideIndex].className += " active";
